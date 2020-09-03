@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./js/echarts.min.js"></script>
+    <script src="./js/jshx.echarts.1.0.js"></script>
+    <title>右柱状图</title>
+    <style>
+        .demo {
+            margin: 50px auto;
+            width: 500px;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main2" class="demo"></div>
+    <script>
+        var category2 = ['其他', '阻挡关门', '超载', '装修垃圾', '野蛮搬运', '生活垃圾']
+        var main2 = new HxChartCrossBar('main2', category2);
+        main2.option.legend = {
+            show: true,
+            bottom: 0
+        };
+        main2.option.grid.top = 20;
+        main2.option.series[0].name = '人为原因故障分析';
+        main2.option.yAxis.axisLabel.show = true;
+        main2.option.yAxis.axisLine.show = true;
+        main2.option.xAxis.axisLine = {
+            show: false
+        };
+        main2.option.xAxis.axisLabel = {
+            show: false
+        };
+        main2.option.xAxis.axisTick = {
+            show: false
+        };
+        main2.option.xAxis.splitLine = {
+            show: false
+        };
+        main2.option.grid.left = 80;
+        main2.option.series[0].label = {};
+        main2.option.series[0].itemStyle = {
+            color: '#ff9600'
+        };
+        main2.option.series[0].zlevel = 1;
+        main2.option.series[0].barWidth = 30;
+        main2.option.series[1] = {
+            data: [100, 100, 100, 100, 100, 100],
+            barWidth: 30,
+            type: 'bar',
+            barGap: '-100%',
+            itemStyle: {
+                color: 'rgba(0,0,0,0.1)'
+            }
+        }
+
+        main2.putData(10);
+        main2.putData(20);
+        main2.putData(30);
+        main2.putData(25);
+        main2.putData(15);
+        main2.putData(20);
+
+
+
+    </script>
+</body>
+
+</html>
